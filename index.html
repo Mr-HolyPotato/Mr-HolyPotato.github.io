@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        name:
+        <select required id="Name">
+            <option value="Суфікс">Суфікс</option>
+            <option value="Артурічка">Артурічка</option>
+            <option value="Давидко">Давидко</option>
+            <option value="Санюша">Санюша</option>
+            <option value="Юрчик">Юрчик</option>
+        </select>
+    </div>
+    <div>
+        <p>
+            Бали, якщо що, від 100 до 200
+        </p>
+        <p>
+            Матем: <input type="number" min="100" max="200" id="math">
+        </p>
+        <p>
+            Укр мова: <input type="number" id="urk">
+        </p>
+
+        <p>
+            Історія: <input type="number" id="history">
+        </p>
+        <p>
+            Англ мова: <input type="number" id="eng">
+        </p>
+    </div>
+
+    <div>
+        <button onclick="saveBet()">Зберегти</button>
+    </div>
+
+    <script>
+        function saveBet() {
+
+
+            let name = document.getElementById("Name").value;
+
+            let math = parseInt(document.getElementById("math").value);
+            let urk = parseInt(document.getElementById("urk").value);
+            let history = parseInt(document.getElementById("history").value);
+            let eng = parseInt(document.getElementById("eng").value);
+
+
+            if (math > 200 || math < 100 || isNaN(math)) {
+                alert("пиши за правилами сюка!!");
+                return;
+            }
+            if (urk > 200 || urk < 100 || isNaN(urk)) {
+                alert("пиши за правилами сюка!!");
+                return;
+            }
+            if (history > 200 || history < 100 || isNaN(history)) {
+                alert("пиши за правилами сюка!!");
+                return;
+            }
+            if (eng > 200 || eng < 100 || isNaN(eng)) {
+                alert("пиши за правилами сюка!!");
+                return;
+            }
+
+
+            let con = confirm(`чувачок: ${name}\n\nМатем єбал: ${math}\nукр єбал: ${urk}\nХісторі єбал: ${history}\nАнгл єбал: ${eng}`);
+
+            
+
+        }
+    </script>
+
+</body>
+
+</html>
